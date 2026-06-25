@@ -36,7 +36,7 @@ function DraftRecoveryBanner() {
   };
 
   return (
-    <div style={{ backgroundColor: "var(--theme-card)", border: "1px solid var(--theme-border)", borderLeft: "4px solid var(--accent)", color: "var(--theme-text-primary)", padding: "1rem", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.875rem", marginTop: "4rem", marginX: "1rem", borderRadius: "var(--radius-md)", boxShadow: "var(--shadow-md)", zIndex: 30, position: "relative" }}>
+    <div style={{ backgroundColor: "var(--theme-card)", border: "1px solid var(--theme-border)", borderLeft: "4px solid var(--accent)", color: "var(--theme-text-primary)", padding: "1rem", display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.875rem", marginTop: "4rem", marginInline: "1rem", borderRadius: "var(--radius-md)", boxShadow: "var(--shadow-md)", zIndex: 30, position: "relative" }}>
       <span>An unsaved draft was recovered.</span>
       <div style={{ display: "flex", gap: "1rem" }}>
         <button onClick={recover} style={{ fontWeight: "bold", color: "var(--accent)" }} className="hover-opacity">Restore</button>

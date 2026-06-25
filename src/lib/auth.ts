@@ -21,13 +21,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         const user = await User.findOne({ email: credentials.email }).lean();
 
-        if (!user || !user.password) {
+        if (!user || !(user as any).password) {
           throw new Error("Invalid credentials");
         }
 
         const isPasswordValid = await bcrypt.compare(
           credentials.password as string,
-          user.password
+          (user as any).password
         );
 
         if (!isPasswordValid) {
@@ -35,9 +35,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
 
         return {
-          id: user._id.toString(),
-          email: user.email,
-          name: user.name,
+          id: (user as any)._id.toString(),
+          email: (user as any).email,
+          name: (user as any).name,
         };
       }
     })

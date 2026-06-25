@@ -54,7 +54,7 @@ export default function EditorContent() {
     }
   };
 
-  const containerVariants = {
+  const containerVariants: any = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -62,7 +62,7 @@ export default function EditorContent() {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: any = {
     hidden: { opacity: 0, y: 10 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
   };
@@ -81,7 +81,7 @@ export default function EditorContent() {
       </AnimatePresence>
 
       {/* Date & Timeline */}
-      <motion.div variants={itemVariants} style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+      <motion.div variants={itemVariants as any} style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
         <div style={{ position: "relative", color: "var(--theme-text-secondary)", fontSize: "0.75rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em", display: "flex", alignItems: "center", gap: "0.5rem" }}>
           
           {/* Custom Time Picker */}
