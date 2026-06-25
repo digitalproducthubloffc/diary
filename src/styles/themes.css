@@ -1,0 +1,99 @@
+/* Design Tokens - Themes (Midnight, Paper, Forest, Ocean, Sepia, Nord) */
+
+/* Default / System (Dark by default) */
+:root {
+  --theme-bg: #0a0a0a;
+  --theme-card: #111111;
+  --theme-border: #222222;
+  --theme-text-primary: #f3f4f6;
+  --theme-text-secondary: #9ca3af;
+  --accent: #10b981; /* Default Emerald */
+  --accent-rgb: 16, 185, 129;
+  --theme-vignette: rgba(0, 0, 0, 0.15);
+  --theme-spotlight: rgba(255, 255, 255, 0.03);
+  --theme-aurora: rgba(var(--accent-rgb), 0.04);
+  --theme-noise-opacity: 0.015;
+}
+
+/* 1. Midnight (Ultra Dark) */
+[data-theme='midnight'] {
+  --theme-bg: #000000;
+  --theme-card: #0a0a0a;
+  --theme-border: #1a1a1a;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #888888;
+  --accent: #10b981;
+  --accent-rgb: 16, 185, 129;
+  --theme-vignette: rgba(0, 0, 0, 0.2);
+  --theme-spotlight: rgba(255, 255, 255, 0.03);
+  --theme-aurora: rgba(var(--accent-rgb), 0.04);
+  --theme-noise-opacity: 0.015;
+}
+
+/* 2. Paper (Light, crisp, premium) */
+[data-theme='paper'] {
+  --theme-bg: #f8fafc; /* slightly cooler off-white */
+  --theme-card: #ffffff;
+  --theme-border: #e2e8f0;
+  --theme-text-primary: #0f172a;
+  --theme-text-secondary: #64748b;
+  --accent: #10b981;
+  --accent-rgb: 16, 185, 129;
+  --theme-vignette: rgba(255, 255, 255, 0.5); /* glow instead of shadow */
+  --theme-spotlight: rgba(255, 255, 255, 0.8); /* bright white spotlight */
+  --theme-aurora: rgba(var(--accent-rgb), 0.05);
+  --theme-noise-opacity: 0.03; /* slightly more noise to texture the light background */
+}
+
+/* 3. Forest (Deep Green) */
+[data-theme='forest'] {
+  --theme-bg: #0d1a16;
+  --theme-card: #13241e;
+  --theme-border: #1d362d;
+  --theme-text-primary: #e2e8f0;
+  --theme-text-secondary: #94a3b8;
+  --accent: #34d399;
+}
+
+/* 4. Ocean (Deep Blue) */
+[data-theme='ocean'] {
+  --theme-bg: #0f172a;
+  --theme-card: #1e293b;
+  --theme-border: #334155;
+  --theme-text-primary: #f8fafc;
+  --theme-text-secondary: #94a3b8;
+  --accent: #38bdf8;
+}
+
+/* 5. Sepia (Warm, reading focused) */
+[data-theme='sepia'] {
+  --theme-bg: #fdf6e3;
+  --theme-card: #eee8d5;
+  --theme-border: #dcd0c0;
+  --theme-text-primary: #657b83;
+  --theme-text-secondary: #93a1a1;
+  --accent: #b58900;
+}
+
+/* 6. Nord (Cool, muted) */
+[data-theme='nord'] {
+  --theme-bg: #2e3440;
+  --theme-card: #3b4252;
+  --theme-border: #4c566a;
+  --theme-text-primary: #eceff4;
+  --theme-text-secondary: #d8dee9;
+  --accent: #88c0d0;
+}
+
+/* Dynamic Accent Colors driven by Mood Selection (Overridden dynamically in React) */
+/* Fallback classes if applied via JS */
+.accent-emerald { --accent: #10b981 !important; }
+.accent-blue { --accent: #3b82f6 !important; }
+.accent-purple { --accent: #a855f7 !important; }
+.accent-orange { --accent: #f97316 !important; }
+
+/* Custom Text Selection */
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
