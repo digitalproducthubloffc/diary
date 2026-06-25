@@ -18,9 +18,9 @@ export default async function SettingsPage() {
     const userDoc = await User.findById(session.user.id).lean();
     if (userDoc) {
       userData = {
-        name: userDoc.name || "User",
-        email: userDoc.email || "user@example.com",
-        createdAt: userDoc.createdAt ? new Date(userDoc.createdAt).toISOString() : new Date().toISOString()
+        name: (userDoc as any).name || "User",
+        email: (userDoc as any).email || "user@example.com",
+        createdAt: (userDoc as any).createdAt ? new Date((userDoc as any).createdAt).toISOString() : new Date().toISOString()
       };
     }
   }

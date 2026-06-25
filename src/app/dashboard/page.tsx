@@ -17,7 +17,7 @@ export default async function DashboardPage() {
     const userDoc = await User.findById(session.user.id).lean();
     if (userDoc) {
       streak = (userDoc as any).streak || 0;
-      userName = userDoc.name?.split(' ')[0] || "Writer";
+      userName = (userDoc as any).name?.split(' ')[0] || "Writer";
     }
   }
 

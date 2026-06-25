@@ -20,8 +20,8 @@ export default async function InsightsPage() {
     await connectDB();
     const userDoc = await User.findById(session.user.id).lean();
     if (userDoc) {
-      streak = userDoc.streak || 0;
-      longestStreak = userDoc.longestStreak || streak; // mock longest streak if it doesn't exist
+      streak = (userDoc as any).streak || 0;
+      longestStreak = (userDoc as any).longestStreak || streak;
     }
   }
 
