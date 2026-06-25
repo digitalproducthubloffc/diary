@@ -18,7 +18,7 @@ export default async function CalendarPage() {
   if (session?.user?.id) {
     await connectDB();
     const userDoc = await User.findById(session.user.id).lean();
-    if (userDoc) streak = userDoc.streak || 0;
+    if (userDoc) streak = (userDoc as any).streak || 0;
   }
 
   const entries = await getEntriesAction();
